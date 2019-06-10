@@ -52,7 +52,7 @@ router.post("/api/sendOTP", (req, res) => {
     .create({
       body: new_message.message_data,
       from: "+16175002589",
-      to: `+91${new_message.mobileNumber}`
+      to: `${new_message.mobileNumber}`
     })
     .then(message => console.log(message))
     .catch(err => console.log(err, "error in sending msg"));
