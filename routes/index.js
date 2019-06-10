@@ -48,14 +48,14 @@ router.post("/api/sendOTP", (req, res) => {
   new Messages(new_message).save().then(() => {
     console.log("data is saved in mongodb");
   });
-  // client.messages
-  //   .create({
-  //     body: new_message.message_data,
-  //     from: "+16175002589",
-  //     to: `+91${new_message.mobileNumber}`
-  //   })
-  //   .then(message => console.log(message))
-  //   .catch(err => console.log(err, "error in sending msg"));
+  client.messages
+    .create({
+      body: new_message.message_data,
+      from: "+16175002589",
+      to: `+91${new_message.mobileNumber}`
+    })
+    .then(message => console.log(message))
+    .catch(err => console.log(err, "error in sending msg"));
 });
 
 // @route   GET /api/getMessages

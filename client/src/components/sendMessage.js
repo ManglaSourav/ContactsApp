@@ -18,7 +18,7 @@ export default class sendMessage extends Component {
     };
     
     axios
-      .post("http://localhost:5000/api/sendOTP", new_msg)
+      .post("/api/sendOTP", new_msg)
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
     this.props.history.push("/");

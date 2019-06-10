@@ -8,7 +8,7 @@ export default class MessageList extends Component {
     messages: []
   };
   componentDidMount() {
-    axios.get("http://localhost:5000/api/getMessages").then(response =>
+    axios.get("/api/getMessages").then(response =>
       this.setState({
         messages: response.data.reverse()
       })
